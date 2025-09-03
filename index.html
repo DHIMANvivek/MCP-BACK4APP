@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back4App MCP Integration Guide</title>
+    <title>Back4App MCP Integration Guide & Tutorial</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
     <style>
         * {
@@ -63,6 +63,29 @@
             gap: 10px;
         }
 
+        .video-workflow {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .workflow-step {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .workflow-step h3 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .flowchart-container {
             background: #f8f9fa;
             border-radius: 10px;
@@ -102,6 +125,39 @@
             border-radius: 10px;
             padding: 20px;
             margin: 20px 0;
+        }
+
+        .prompt-card {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .prompt-card h4 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .prompt-text {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 15px;
+            font-family: monospace;
+            border-left: 4px solid rgba(255,255,255,0.3);
+            margin: 10px 0;
+        }
+
+        .expected-output {
+            background: rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            border-left: 4px solid rgba(255,255,255,0.5);
         }
 
         .code-block {
@@ -235,6 +291,50 @@
             margin-top: 10px;
         }
 
+        .project-showcase {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .tutorial-nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        .nav-button.active {
+            background: #4c51bf;
+            box-shadow: 0 4px 12px rgba(76, 81, 191, 0.4);
+        }
+
+        .tutorial-section {
+            display: none;
+        }
+
+        .tutorial-section.active {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
@@ -243,6 +343,15 @@
             .tools-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .tutorial-nav {
+                justify-content: center;
+            }
+            
+            .nav-button {
+                flex: 1;
+                min-width: 120px;
+            }
         }
     </style>
 </head>
@@ -250,7 +359,419 @@
     <div class="container">
         <div class="header">
             <h1>🚀 Back4App MCP Integration</h1>
-            <p>Complete Guide & Interactive Demo for AI-Powered Backend Development</p>
+            <p>Complete Guide & Interactive Tutorial for AI-Powered Backend Development</p>
+        </div>
+
+        <!-- Video Workflow Section -->
+        <div class="video-workflow">
+            <h2>🎬 Video Tutorial Workflow</h2>
+            <p>Follow this complete workflow to build a production-ready app with AI assistance</p>
+            
+            <div class="workflow-step">
+                <h3>🎯 1. Introduction - The Vibe Coding Problem</h3>
+                <p><strong>The Challenge:</strong> Traditional backend setup is time-consuming and complex. Developers spend hours configuring servers, databases, authentication, and deployment pipelines before writing actual business logic.</p>
+                <p><strong>Pain Points:</strong></p>
+                <ul>
+                    <li>Manual server configuration and maintenance</li>
+                    <li>Complex authentication implementation</li>
+                    <li>Database setup and management overhead</li>
+                    <li>Deployment and hosting configuration</li>
+                    <li>Scaling and monitoring challenges</li>
+                </ul>
+            </div>
+
+            <div class="workflow-step">
+                <h3>✨ 2. A New Approach - AI-Powered Development</h3>
+                <p><strong>The Solution:</strong> Combine Back4App's backend-as-a-service with AI-powered development through MCP (Model Context Protocol) integration.</p>
+                <p><strong>Benefits:</strong></p>
+                <ul>
+                    <li>Natural language commands to build applications</li>
+                    <li>Instant backend services (database, auth, cloud functions)</li>
+                    <li>Automated deployment and hosting</li>
+                    <li>Production-ready infrastructure from day one</li>
+                </ul>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🔌 3. Integrate Back4App with Cursor via MCP</h3>
+                <p>Seamless integration between your AI assistant and Back4App services through Model Context Protocol.</p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>💻 4. Build Web Application Using Prompts</h3>
+                <p>Use natural language prompts in Cursor to generate complete application code with backend integration.</p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🌐 5. Deploy Frontend with Web Hosting</h3>
+                <p>Streamlined deployment process using Back4App's web hosting feature with fully automated workflows.</p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🔐 6. Implement Authentication & Cloud Functions</h3>
+                <p>Add user authentication, cloud code, and data storage without additional setup or configuration.</p>
+            </div>
+
+            <div class="workflow-step">
+                <h3>🚀 7. Deploy Production-Ready Application</h3>
+                <p>Launch a fully functional, scalable application quickly and reliably with enterprise-grade infrastructure.</p>
+            </div>
+        </div>
+
+        <!-- Project Showcase -->
+        <div class="project-showcase">
+            <h2>📋 Example Project: TaskMaster Pro</h2>
+            <p>We'll build a complete Task Management application with the following features:</p>
+            
+            <div class="tools-grid" style="margin-top: 20px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>🔐 Authentication System</h3>
+                    <ul>
+                        <li>User registration & login</li>
+                        <li>Password reset functionality</li>
+                        <li>Session management</li>
+                        <li>Protected routes</li>
+                    </ul>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>📝 CRUD Operations</h3>
+                    <ul>
+                        <li>Create, read, update, delete tasks</li>
+                        <li>Task categories & priorities</li>
+                        <li>Due dates & reminders</li>
+                        <li>Bulk operations</li>
+                    </ul>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>⚡ Advanced Features</h3>
+                    <ul>
+                        <li>Real-time updates</li>
+                        <li>Team collaboration</li>
+                        <li>Cloud functions for automation</li>
+                        <li>Push notifications</li>
+                    </ul>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>🎨 Modern UI/UX</h3>
+                    <ul>
+                        <li>Responsive design</li>
+                        <li>Dark/light theme</li>
+                        <li>Drag & drop interface</li>
+                        <li>Progressive Web App</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutorial Navigation -->
+        <div class="card">
+            <h2>📚 Step-by-Step Tutorial</h2>
+            <div class="tutorial-nav">
+                <button class="nav-button active" onclick="showTutorialSection('setup')">🔧 Setup</button>
+                <button class="nav-button" onclick="showTutorialSection('project-init')">🚀 Initialize</button>
+                <button class="nav-button" onclick="showTutorialSection('frontend')">🎨 Frontend</button>
+                <button class="nav-button" onclick="showTutorialSection('backend')">⚙️ Backend</button>
+                <button class="nav-button" onclick="showTutorialSection('auth')">🔐 Auth</button>
+                <button class="nav-button" onclick="showTutorialSection('deploy')">🌐 Deploy</button>
+            </div>
+
+            <!-- Setup Section -->
+            <div id="setup" class="tutorial-section active">
+                <h3>🔧 Initial Setup & Configuration</h3>
+                
+                <div class="prompt-card">
+                    <h4>💬 Prompt 1: Setup Back4App MCP Integration</h4>
+                    <div class="prompt-text">
+                        I want to integrate Back4App with Cursor using MCP. Please help me:
+                        1. Install the Back4App MCP server
+                        2. Configure it with my account key: [YOUR_ACCOUNT_KEY]
+                        3. Test the connection
+                        4. Show me available MCP tools for Back4App
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will guide you through MCP installation, help configure Cursor settings, and list available Back4App tools for app management, Parse API, and cloud hosting.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💬 Prompt 2: Create Back4App Application</h4>
+                    <div class="prompt-text">
+                        Using the Back4App MCP tools, please:
+                        1. Create a new Parse application called "TaskMaster Pro"
+                        2. Set it as my current working app
+                        3. Show me the app details and configuration
+                        4. Enable web hosting for this app
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will use MCP tools to create the app, provide app ID, JavaScript key, and enable web hosting with the subdomain.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Initialization -->
+            <div id="project-init" class="tutorial-section">
+                <h3>🚀 Project Initialization</h3>
+                
+                <div class="prompt-card">
+                    <h4>💬 Prompt 3: Initialize Project Structure</h4>
+                    <div class="prompt-text">
+                        Create a modern web application structure for TaskMaster Pro with:
+                        1. HTML5 boilerplate with semantic structure
+                        2. CSS with modern styling (flexbox/grid, animations, responsive design)
+                        3. JavaScript modules for different functionalities
+                        4. Integration with Back4App Parse JavaScript SDK
+                        5. Folder structure: css/, js/, assets/, index.html
+                        
+                        Use my Back4App app configuration from the previous step.
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will create a complete project structure with properly configured Parse SDK, modern HTML/CSS/JS setup, and organized file structure.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💬 Prompt 4: Setup Parse SDK Configuration</h4>
+                    <div class="prompt-text">
+                        Configure the Parse JavaScript SDK in my project with:
+                        1. Parse initialization using my app credentials
+                        2. Error handling and connection testing
+                        3. Environment-specific configurations
+                        4. Utility functions for common Parse operations
+                        5. Debug mode for development
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will create a proper Parse configuration file with your app credentials, connection testing, and utility functions.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frontend Development -->
+            <div id="frontend" class="tutorial-section">
+                <h3>🎨 Frontend Development</h3>
+                
+                <div class="prompt-card">
+                    <h4>💬 Prompt 5: Create Modern Task Management UI</h4>
+                    <div class="prompt-text">
+                        Design and build a beautiful, modern task management interface with:
+                        1. Clean, minimalist design with card-based layout
+                        2. Dark/light theme toggle
+                        3. Responsive design for all devices
+                        4. Task list with priority indicators, due dates, categories
+                        5. Add task modal/form with validation
+                        6. Edit/delete task functionality
+                        7. Smooth animations and transitions
+                        8. Loading states and error handling UI
+                        9. Search and filter capabilities
+                        10. Drag & drop task reordering
+                        
+                        Use modern CSS (Grid, Flexbox, CSS Variables) and vanilla JavaScript.
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will create a comprehensive, modern UI with all requested features, responsive design, and smooth interactions.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💬 Prompt 6: Implement Task Management Logic</h4>
+                    <div class="prompt-text">
+                        Create the frontend JavaScript logic for task management:
+                        1. Task creation, editing, and deletion
+                        2. Local state management before backend sync
+                        3. Form validation and error handling
+                        4. Search and filtering functionality
+                        5. Sorting by different criteria (date, priority, status)
+                        6. Bulk operations (mark complete, delete multiple)
+                        7. Category management
+                        8. Due date handling and reminders
+                        9. Progress tracking and statistics
+                        10. Offline capabilities with local storage fallback
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will implement comprehensive task management logic with state management, validation, and user interactions.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Integration -->
+            <div id="backend" class="tutorial-section">
+                <h3>⚙️ Backend Integration</h3>
+                
+                <div class="prompt-card">
+                    <h4>💬 Prompt 7: Create Parse Database Classes</h4>
+                    <div class="prompt-text">
+                        Using Back4App MCP tools, help me design and create Parse database classes:
+                        1. Task class with fields: title, description, priority, dueDate, category, completed, userId
+                        2. Category class with fields: name, color, userId
+                        3. Set up proper Class Level Permissions (CLPs) for security
+                        4. Create indexes for better query performance
+                        5. Add default data and sample tasks
+                        
+                        Then integrate these classes with my frontend JavaScript code.
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will use MCP tools to create database classes, set permissions, and integrate them with your frontend code.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💬 Prompt 8: Implement CRUD Operations</h4>
+                    <div class="prompt-text">
+                        Create complete CRUD operations for tasks using Parse SDK:
+                        1. Create new tasks with validation and error handling
+                        2. Fetch tasks with pagination, filtering, and sorting
+                        3. Update tasks with optimistic updates
+                        4. Delete tasks with confirmation
+                        5. Batch operations for multiple tasks
+                        6. Real-time updates using Parse LiveQuery
+                        7. Conflict resolution for concurrent edits
+                        8. Proper error handling and user feedback
+                        9. Caching strategy for better performance
+                        10. Offline sync capabilities
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will implement comprehensive CRUD operations with real-time features, error handling, and performance optimizations.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💬 Prompt 9: Add Cloud Functions</h4>
+                    <div class="prompt-text">
+                        Using Back4App MCP tools, create cloud functions for advanced features:
+                        1. Automated task reminders (beforeSave/afterSave triggers)
+                        2. Task deadline notifications
+                        3. Daily/weekly task summary emails
+                        4. Task statistics and analytics
+                        5. Bulk task operations
+                        6. Data cleanup and maintenance jobs
+                        7. Integration with external services (email, calendar)
+                        8. Background jobs for heavy operations
+                        
+                        Deploy these functions to my Back4App application.
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will create and deploy cloud functions using MCP tools, implementing automated features and background jobs.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Authentication -->
+            <div id="auth" class="tutorial-section">
+                <h3>🔐 Authentication System</h3>
+                
+                <div class="prompt-card">
+                    <h4>💬 Prompt 10: Implement User Authentication</h4>
+                    <div class="prompt-text">
+                        Create a complete authentication system with Parse User class:
+                        1. User registration form with email validation
+                        2. Login form with remember me option
+                        3. Password reset functionality
+                        4. Email verification workflow
+                        5. User profile management
+                        6. Session management and auto-logout
+                        7. Protected routes and user state checking
+                        8. Social login options (Google, Facebook)
+                        9. Two-factor authentication
+                        10. Account deletion and data export
+                        
+                        Include proper UI/UX with loading states and error handling.
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will implement a complete authentication system with forms, validation, session management, and security features.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💬 Prompt 11: Add User-Based Data Security</h4>
+                    <div class="prompt-text">
+                        Implement user-based data security and access control:
+                        1. Restrict tasks to logged-in users only
+                        2. Add user ID to all task operations
+                        3. Implement Access Control Lists (ACLs) for tasks
+                        4. Create user roles (admin, user, guest)
+                        5. Add sharing functionality for tasks/categories
+                        6. Team collaboration features
+                        7. Permission-based UI showing/hiding
+                        8. Audit logging for security events
+                        9. Rate limiting for API calls
+                        10. Data encryption for sensitive fields
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will implement comprehensive security measures, user-based data access, and collaboration features.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deployment -->
+            <div id="deploy" class="tutorial-section">
+                <h3>🌐 Deployment & Production</h3>
+                
+                <div class="prompt-card">
+                    <h4>💬 Prompt 12: Deploy to Back4App Web Hosting</h4>
+                    <div class="prompt-text">
+                        Using Back4App MCP tools, deploy my TaskMaster Pro application:
+                        1. Optimize code for production (minify CSS/JS, compress images)
+                        2. Update Parse SDK configuration for production
+                        3. Deploy all files to Back4App web hosting
+                        4. Configure custom domain if needed
+                        5. Set up SSL certificate
+                        6. Test deployment and functionality
+                        7. Configure caching and CDN
+                        8. Set up monitoring and error tracking
+                        9. Create deployment checklist
+                        10. Document the deployment process
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will optimize your code and deploy it using Back4App MCP tools, providing a live URL and deployment confirmation.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💬 Prompt 13: Add Production Features</h4>
+                    <div class="prompt-text">
+                        Enhance the deployed application with production-ready features:
+                        1. Progressive Web App (PWA) functionality
+                        2. Service worker for offline capabilities
+                        3. Push notifications for task reminders
+                        4. App icons and splash screens
+                        5. SEO optimization (meta tags, structured data)
+                        6. Analytics tracking (user behavior, performance)
+                        7. Error monitoring and crash reporting
+                        8. Performance optimization (lazy loading, code splitting)
+                        9. Accessibility improvements (ARIA, keyboard navigation)
+                        10. Browser compatibility testing
+                        
+                        Also create documentation for users and administrators.
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will add PWA features, notifications, analytics, and create comprehensive documentation for your production app.
+                    </div>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>💬 Prompt 14: Final Testing & Launch</h4>
+                    <div class="prompt-text">
+                        Perform comprehensive testing and launch preparation:
+                        1. Create automated tests for core functionality
+                        2. Cross-browser testing checklist
+                        3. Mobile responsiveness testing
+                        4. Performance testing and optimization
+                        5. Security testing and vulnerability assessment
+                        6. Load testing for scalability
+                        7. User acceptance testing scenarios
+                        8. Backup and disaster recovery plan
+                        9. Launch announcement and marketing materials
+                        10. Post-launch monitoring and maintenance plan
+                        
+                        Provide a launch checklist and success metrics to track.
+                    </div>
+                    <div class="expected-output">
+                        <strong>Expected AI Response:</strong> AI will create comprehensive testing procedures, launch checklist, and provide guidance for successful app launch and monitoring.
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Main Flowchart -->
@@ -494,20 +1015,21 @@ npx @back4app/mcp installer install vscode --account-key YOUR_ACCOUNT_KEY
                 <p>Simulate common MCP operations (Demo Mode)</p>
                 
                 <div>
-                    <button class="demo-button" onclick="simulateCommand('createApp')">📱 Create New App</button>
+                    <button class="demo-button" onclick="simulateCommand('createApp')">📱 Create TaskMaster App</button>
                     <button class="demo-button" onclick="simulateCommand('listApps')">📋 List All Apps</button>
                     <button class="demo-button" onclick="simulateCommand('deployCode')">🚀 Deploy Cloud Code</button>
-                    <button class="demo-button" onclick="simulateCommand('queryData')">🔍 Query Database</button>
+                    <button class="demo-button" onclick="simulateCommand('deployWeb')">🌐 Deploy Web Hosting</button>
+                    <button class="demo-button" onclick="simulateCommand('queryData')">🔍 Query Tasks</button>
                 </div>
                 
                 <div class="output-panel" id="demoOutput">
-                    Ready to simulate MCP commands...
+                    Ready to simulate MCP commands for TaskMaster Pro...
                     
                     Example AI prompts you can use:
-                    • "Create a new Back4App application called 'MyTodoApp'"
-                    • "List all my Back4App applications"
-                    • "Deploy my cloud code to the current app"
-                    • "Query all users from the User table"
+                    • "Create a new Back4App application called 'TaskMaster Pro'"
+                    • "Set up database classes for tasks and categories"
+                    • "Deploy my task management app to web hosting"
+                    • "Create cloud functions for task reminders"
                 </div>
             </div>
         </div>
@@ -523,6 +1045,7 @@ npx @back4app/mcp installer install vscode --account-key YOUR_ACCOUNT_KEY
                     <li>AI can create, modify, and delete apps and data</li>
                     <li>Always test on a dedicated test account first</li>
                     <li>Never share configuration files with access tokens</li>
+                    <li>Review all AI-generated database schemas and cloud functions</li>
                 </ul>
             </div>
 
@@ -533,6 +1056,10 @@ npx @back4app/mcp installer install vscode --account-key YOUR_ACCOUNT_KEY
                     <li>Review all AI-generated code before production deployment</li>
                     <li>Enable web hosting for easy deployment visualization</li>
                     <li>Keep Node.js updated (v16 or higher)</li>
+                    <li>Implement proper Class Level Permissions (CLPs) for data security</li>
+                    <li>Use version control for your project files</li>
+                    <li>Test authentication flows thoroughly</li>
+                    <li>Monitor application performance and user metrics</li>
                 </ul>
             </div>
         </div>
@@ -550,6 +1077,7 @@ npx @back4app/mcp installer install vscode --account-key YOUR_ACCOUNT_KEY
                         <li>Verify account key is valid and correctly entered</li>
                         <li>Check Node.js version (v16+ required)</li>
                         <li>Ensure npx command works correctly</li>
+                        <li>Restart your IDE after configuration changes</li>
                     </ul>
                 </div>
 
@@ -559,6 +1087,7 @@ npx @back4app/mcp installer install vscode --account-key YOUR_ACCOUNT_KEY
                         <li>Restart your IDE/LLM client</li>
                         <li>Check MCP server status in your tool</li>
                         <li>Verify network connectivity</li>
+                        <li>Clear npm cache: npm cache clean --force</li>
                     </ul>
                 </div>
 
@@ -568,6 +1097,17 @@ npx @back4app/mcp installer install vscode --account-key YOUR_ACCOUNT_KEY
                         <li>Ensure account key has necessary permissions</li>
                         <li>Check if account key is expired</li>
                         <li>Create a new account key if needed</li>
+                        <li>Verify app selection in Back4App dashboard</li>
+                    </ul>
+                </div>
+
+                <div style="margin: 15px 0;">
+                    <strong>❌ Deployment Issues</strong>
+                    <ul>
+                        <li>Check file paths and structure</li>
+                        <li>Verify web hosting is enabled for your app</li>
+                        <li>Ensure all required files are included</li>
+                        <li>Check for JavaScript errors in browser console</li>
                     </ul>
                 </div>
             </div>
@@ -575,26 +1115,53 @@ npx @back4app/mcp installer install vscode --account-key YOUR_ACCOUNT_KEY
 
         <!-- Next Steps -->
         <div class="card">
-            <h2>🎯 Next Steps</h2>
+            <h2>🎯 Next Steps & Advanced Features</h2>
             <div class="tools-grid">
                 <div style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white; padding: 20px; border-radius: 10px;">
-                    <h3>🚀 Start Building</h3>
-                    <p>Your AI assistant can now:</p>
+                    <h3>🚀 Production Deployment</h3>
+                    <p>Your AI assistant can now help you:</p>
                     <ul>
-                        <li>Create and manage apps</li>
-                        <li>Deploy cloud code</li>
-                        <li>Manage databases</li>
-                        <li>Handle user authentication</li>
+                        <li>Deploy TaskMaster Pro to production</li>
+                        <li>Configure custom domains</li>
+                        <li>Set up SSL certificates</li>
+                        <li>Implement monitoring and analytics</li>
+                        <li>Scale your application</li>
                     </ul>
                 </div>
                 
                 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px;">
-                    <h3>💡 Pro Tips</h3>
+                    <h3>⚡ Advanced Features</h3>
+                    <p>Enhance your application with:</p>
                     <ul>
-                        <li>Use natural language commands</li>
-                        <li>Ask for code explanations</li>
-                        <li>Request deployment assistance</li>
-                        <li>Get help with API integration</li>
+                        <li>Real-time collaboration</li>
+                        <li>Push notifications</li>
+                        <li>Progressive Web App features</li>
+                        <li>Third-party integrations</li>
+                        <li>Advanced analytics and reporting</li>
+                    </ul>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 20px; border-radius: 10px;">
+                    <h3>🎨 UI/UX Enhancements</h3>
+                    <p>Improve user experience with:</p>
+                    <ul>
+                        <li>Advanced animations and micro-interactions</li>
+                        <li>Customizable themes and layouts</li>
+                        <li>Accessibility improvements</li>
+                        <li>Mobile app development</li>
+                        <li>Voice commands and shortcuts</li>
+                    </ul>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 20px; border-radius: 10px;">
+                    <h3>📊 Business Intelligence</h3>
+                    <p>Add business features like:</p>
+                    <ul>
+                        <li>Task analytics and productivity metrics</li>
+                        <li>Team performance dashboards</li>
+                        <li>Automated reporting</li>
+                        <li>Integration with business tools</li>
+                        <li>Revenue tracking and billing</li>
                     </ul>
                 </div>
             </div>
@@ -627,77 +1194,155 @@ npx @back4app/mcp installer install vscode --account-key YOUR_ACCOUNT_KEY
             event.target.classList.add('active');
         }
 
+        // Tutorial navigation
+        function showTutorialSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.tutorial-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all nav buttons
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => button.classList.remove('active'));
+            
+            // Show selected section and activate nav button
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
         // Demo simulation
         function simulateCommand(command) {
             const output = document.getElementById('demoOutput');
             const commands = {
                 createApp: {
-                    prompt: "AI: Creating new Back4App application...",
-                    response: `✅ Successfully created app "MyTodoApp"
-📱 App ID: abc123xyz
-🌐 Subdomain: mytodoapp.back4app.io
-🔑 Application ID: ABC123XYZ789
-🔐 JavaScript Key: DEF456UVW012
+                    prompt: "🤖 AI: Creating TaskMaster Pro application with Back4App MCP...",
+                    response: `✅ Successfully created "TaskMaster Pro" application!
 
-Next steps:
-- Configure your app settings
-- Set up database classes
-- Deploy your first cloud function`
+📱 Application Details:
+   App Name: TaskMaster Pro
+   App ID: tm_pro_abc123
+   Subdomain: taskmaster-pro.back4app.io
+   Application ID: TM123ABC456DEF
+   JavaScript Key: JS789GHI012JKL
+
+🗄️ Database Classes Created:
+   ├── Task (title, description, priority, dueDate, category, completed, userId)
+   ├── Category (name, color, userId)  
+   └── _User (enhanced for authentication)
+
+🔒 Security Configuration:
+   ✅ Class Level Permissions set
+   ✅ ACLs configured for user data isolation
+   ✅ Web hosting enabled
+
+🚀 Ready for development! You can now build your frontend.`
                 },
                 listApps: {
-                    prompt: "AI: Fetching all your Back4App applications...",
+                    prompt: "🤖 AI: Fetching your Back4App applications...",
                     response: `📋 Your Back4App Applications:
 
-🔹 MyTodoApp (abc123xyz)
+🔹 TaskMaster Pro (tm_pro_abc123) ⭐ Current
+   Status: Active | Created: Today
+   URL: taskmaster-pro.back4app.io
+   Features: Web Hosting, Database, Cloud Functions
+   
+🔹 E-commerce Demo (ecom_def456)  
    Status: Active | Created: 2025-01-15
-   URL: mytodoapp.back4app.io
+   URL: ecommerce-demo.back4app.io
+   Features: Database, Cloud Functions
    
-🔹 TestApp (def456uvw)  
-   Status: Active | Created: 2025-01-10
-   URL: testapp.back4app.io
-   
-🔹 E-commerce Demo (ghi789rst)
-   Status: Inactive | Created: 2025-01-05
-   URL: ecommerce.back4app.io
+🔹 Chat App (chat_ghi789)
+   Status: Development | Created: 2025-01-10
+   URL: chatapp-test.back4app.io
+   Features: Real-time, Push Notifications
 
-Total: 3 applications`
+📊 Total: 3 applications | 2 Active | 1 In Development`
                 },
                 deployCode: {
-                    prompt: "AI: Deploying cloud code to current application...",
-                    response: `🚀 Deploying Cloud Code...
+                    prompt: "🤖 AI: Deploying cloud functions for TaskMaster Pro...",
+                    response: `☁️ Deploying Cloud Code to TaskMaster Pro...
 
-📂 Files being deployed:
-   ├── main.js (Cloud Functions)
-   ├── user-utils.js (Helper Functions)  
-   └── email-templates/ (Email Templates)
+📂 Cloud Functions Deployed:
+   ├── taskReminder.js (Background job for notifications)
+   ├── taskStatistics.js (Analytics and reporting)
+   ├── emailNotifications.js (Email triggers)
+   ├── dataCleanup.js (Maintenance jobs)
+   └── webhookHandlers.js (External integrations)
 
-⏳ Upload Progress: 100%
-✅ Cloud Code Deployed Successfully!
+🔧 Triggers Activated:
+   ├── beforeSave("Task") - Validation and auto-fields
+   ├── afterSave("Task") - Notifications and logging
+   └── beforeDelete("Task") - Cleanup and archiving
 
-📊 Deployment Summary:
-   - 5 Cloud Functions updated
-   - 2 Background Jobs scheduled  
-   - 3 Triggers activated
-   
-🌐 Live at: mytodoapp.back4app.io`
+⚡ Background Jobs Scheduled:
+   ├── Daily task summary emails (08:00 UTC)
+   ├── Overdue task reminders (Every 2 hours)
+   └── Weekly analytics generation (Sundays)
+
+✅ Cloud Code deployed successfully!
+🌐 Functions available at: taskmaster-pro.back4app.io/parse/functions/`
+                },
+                deployWeb: {
+                    prompt: "🤖 AI: Deploying TaskMaster Pro to web hosting...",
+                    response: `🌐 Deploying Web Application...
+
+📁 Files Deployed:
+   ├── index.html (Main application)
+   ├── css/
+   │   ├── main.css (Core styles)
+   │   ├── themes.css (Dark/Light themes)
+   │   └── responsive.css (Mobile optimization)
+   ├── js/
+   │   ├── app.js (Main application logic)
+   │   ├── auth.js (Authentication handling)
+   │   ├── tasks.js (Task management)
+   │   └── utils.js (Utility functions)
+   ├── assets/
+   │   ├── icons/ (PWA icons)
+   │   ├── images/ (UI graphics)
+   │   └── fonts/ (Custom typography)
+   ├── manifest.json (PWA configuration)
+   └── service-worker.js (Offline support)
+
+🔄 Build Optimizations Applied:
+   ✅ CSS minification (67% size reduction)
+   ✅ JavaScript bundling and compression
+   ✅ Image optimization (WebP format)
+   ✅ Gzip compression enabled
+   ✅ Browser caching configured
+
+🚀 Deployment Complete!
+🌍 Live URL: https://taskmaster-pro.back4app.io
+📊 Performance Score: 95/100
+⚡ Load Time: 1.2 seconds`
                 },
                 queryData: {
-                    prompt: "AI: Querying database for user data...",
+                    prompt: "🤖 AI: Querying TaskMaster Pro database...",
                     response: `🔍 Database Query Results:
 
-📊 Query: Parse.Query("_User").limit(5)
+📋 Tasks Overview:
+┌──────────────────────────────────────────────────────┐
+│ Priority │ Status    │ Count │ Overdue │ This Week   │
+├──────────────────────────────────────────────────────┤  
+│ High     │ Pending   │   12  │    3    │      8      │
+│ Medium   │ Pending   │   28  │    5    │     15      │
+│ Low      │ Pending   │   45  │    2    │     20      │
+│ All      │ Completed │   89  │   N/A   │     35      │
+└──────────────────────────────────────────────────────┘
 
-👥 Found 3 users:
-┌─────────────────────────────────────────┐
-│ ObjectId    │ Username  │ Email         │
-├─────────────────────────────────────────┤  
-│ abc123      │ john_doe  │ john@test.com │
-│ def456      │ jane_smith│ jane@test.com │ 
-│ ghi789      │ bob_wilson│ bob@test.com  │
-└─────────────────────────────────────────┘
+👥 Recent Task Activity (Last 24h):
+├── 🆕 15 tasks created
+├── ✅ 23 tasks completed  
+├── ✏️ 8 tasks updated
+└── 🗑️ 3 tasks deleted
 
-⚡ Query executed in 45ms
-💾 Total users in database: 3`
+📊 Categories Distribution:
+├── 💼 Work: 45 tasks (32%)
+├── 🏠 Personal: 38 tasks (27%)
+├── 🛒 Shopping: 28 tasks (20%)
+├── 🎯 Goals: 18 tasks (13%)
+└── 🚨 Urgent: 11 tasks (8%)
+
+⚡ Query executed in 23ms | Total tasks: 140`
                 }
             };
 
@@ -706,13 +1351,13 @@ Total: 3 applications`
                 
                 setTimeout(() => {
                     output.innerHTML = commands[command].response;
-                }, 1500);
+                }, 2000);
             }
         }
 
         // Add some interactive animations
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card');
+            const cards = document.querySelectorAll('.card, .video-workflow, .project-showcase');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
